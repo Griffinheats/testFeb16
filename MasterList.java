@@ -31,9 +31,9 @@ public class MasterList
         {
             if(orders.get(i).getVariety().equals(v))
             {
+                counter += orders.get(i).getNumOedered();
                 orders.remove(i);
                 i--;
-                counter ++;
             }
         }
         return counter;
@@ -44,7 +44,7 @@ public class MasterList
         String result = "";
         for(PopcornOrders pop : orders)
         {
-            result += ("\n" + pop.getVariety());
+            result += ("\n" + pop.getVariety() + " " + pop.getNumOedered());
         }
         if(orders.size() == 0)
         {
